@@ -16,10 +16,10 @@ body:
         🌟 Thank you for taking your time ⌛ to file a *issue report* (general)
         which will require approval of admins (`karta`) of the organization. This
         issue is generated using issue forms, and currently creating a blank
-        issue is disabled (using [`config.yml`](./config,ynl)), and the organization
+        issue is disabled (using [`config.yml`](./config.yml)), and the organization
         will add more types of issue that may be required in the future.
 
-  - type: markdown
+  - type: textarea
     id: what-general-issue
     attributes:
       label: Provide a Detailed Explanation
