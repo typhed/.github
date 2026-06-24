@@ -1,0 +1,30 @@
+name: DevSkim Security Analysis
+
+on:
+  workflow_call:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+  schedule:
+    - cron: '0 0 * * 1,3,5'
+
+jobs:
+  lint:
+    name: Security Analysis
+    runs-on: ubuntu-latest
+    permissions:
+      actions: read
+      contents: read
+      security-events: write
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Run DevSkim Scanner
+        uses: microsoft/DevSkim-Action@v1
+
+      - name: Upload DevSkim Scan Results to GitHub Security Tab
+        uses: github/codeql-action/upload-sarif@v3
+        with:
+          sarif_file: devskim-results.sarif
