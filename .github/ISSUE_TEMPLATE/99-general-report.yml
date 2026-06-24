@@ -1,0 +1,57 @@
+name: 👀 General Issue Report
+description: |
+  The organization does not allow a blank issue template. To report a
+  *general issue* which does not fit any of the above categories or you
+  are unsure about the category of the issue.
+
+title: "[General Issue]: "
+labels: ["issue/admin"]
+
+body:
+  # Provide a brief description about the project, and the issue template
+  # Each specific section begins with a "- type: <>" parameter, attributes
+  - type: markdown
+    attributes:
+      value: |
+        🌟 Thank you for taking your time ⌛ to file a *issue report* (general)
+        which will require approval of admins (`karta`) of the organization. This
+        issue is generated using issue forms, and currently creating a blank
+        issue is disabled (using [`config.yml`](./config,ynl)), and the organization
+        will add more types of issue that may be required in the future.
+
+  - type: markdown
+    id: what-general-issue
+    attributes:
+      label: Provide a Detailed Explanation
+      description: |
+        Please elaborate about the issue, the text area uses "markdown" to categorize
+        and explain the issue in detail. Please use markdown backticks syntax to
+        highlight any code blocks that may be required.
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: coc-terms
+    attributes:
+      label: Code of Conduct
+      description: |
+        By submitting this issue, you agree to follow our
+        [Code of Conduct](../CODE_OF_CONDUCT.md).
+      options:
+        - label: |
+            I agree to follow this Organization's and the Project's
+            Code of Conduct.
+          required: true
+
+  - type: checkboxes
+    id: contributing-terms
+    attributes:
+      label: Contributing Guidelines
+      description: |
+        By submitting this issue, you agree to follow our
+        [Contributing Guidelines](../CONTRIBUTING.md).
+      options:
+        - label: |
+            I agree to follow this Organization's and the Project's
+            Contributing Guidelines.
+          required: true
