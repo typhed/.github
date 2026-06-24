@@ -1,0 +1,29 @@
+name: Static Analysis for GH Actions
+
+on:
+  workflow_call:
+  pull_request:
+
+permissions: {}
+
+jobs:
+  zizmor:
+    name: Static Analysis
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Actions Checkout
+        uses: actions/checkout@6
+        with:
+          persist-credentials: false
+      - name: Dump Configuration File
+        run: |
+          # TODO: This should be enabled for long-term, but requires manual migration
+          echo -e "rules:\n  secrets-outside-env:\n    disable: true" > zizmor.yml
+      - name: Run Security Checks
+        uses: zizmorcore/zizmor-action@71321a20a9ded102f6e9ce5718a2fcec2c4f70d8 # v0.5.2
+        with:
+          advanced-security: false
+          config: zizmor.yml
+          fail-on-no-inputs: false
