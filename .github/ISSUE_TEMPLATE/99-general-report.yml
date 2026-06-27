@@ -1,7 +1,7 @@
 name: 👀 General Issue Report
 description: |
   The organization does not allow a blank issue template. To report a
-  general issue which does not fit any of the above categories or you
+  general issue which does not fit any of the above categories, or you
   are unsure about the category of the issue.
 
 title: "[General Issue]: "
@@ -25,7 +25,7 @@ body:
       label: Provide a Detailed Explanation
       description: |
         Please elaborate on the issue. The text area uses "markdown" to categorize
-        and explain the issue in detail. Please use markdown backticks syntax to
+        and explain the issue in detail. Please use markdown backtick syntax to
         highlight any code blocks that may be required.
     validations:
       required: true
@@ -36,7 +36,7 @@ body:
       label: Code of Conduct
       description: |
         By submitting this issue, you agree to follow our
-        [Code of Conduct](http://typhed.github.io/permalink/conduct).
+        [Code of Conduct](http://typhed.com/permalink/conduct).
       options:
         - label: |
             I agree to follow this Organization's and the Project's
@@ -49,7 +49,7 @@ body:
       label: Contributing Guidelines
       description: |
         By submitting this issue, you agree to follow our
-        [Contributing Guidelines](http://typhed.github.io/permalink/contributing).
+        [Contributing Guidelines](http://typhed.com/permalink/contributing).
       options:
         - label: |
             I agree to follow this Organization's and the Project's
